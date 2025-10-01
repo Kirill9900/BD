@@ -1,6 +1,5 @@
 -- generate_remaining_data.sql
 -- Заполняет sensor_data, fuel_consumption и maintenance, если они пустые.
--- Работает в схеме transport.
 SET search_path TO transport;
 \timing on
 
@@ -38,7 +37,7 @@ BEGIN
 END
 $$;
 
--- 2) Заправки (fuel_consumption) — вставляем для завершённых поездок (вероятность ~15%)
+-- 2) Заправки
 DO $$
 DECLARE
     cnt BIGINT;
@@ -75,7 +74,7 @@ END
 $$;
 
 
--- 3) Техобслуживание (maintenance) — 1-2 записи на автомобиль (если таблица пуста)
+-- 3) Техобслуживание — 1-2 записи на автомобиль (если таблица пуста)
 DO $$
 DECLARE
     cnt BIGINT;

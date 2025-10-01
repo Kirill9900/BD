@@ -4,8 +4,8 @@
 # Настройки:
 DB="transport_monitoring"
 PSQL="psql -d $DB -q -v ON_ERROR_STOP=1"
-BATCH_TRIPS=2000        # число поездок в одном батче (можно 2000..10000)
-POINTS_PER_HOUR=6       # начальное предположение (точек в час)
+BATCH_TRIPS=2000        
+POINTS_PER_HOUR=6       
 MAX_POINTS_PER_TRIP=1000
 
 # Определяем диапазон завершённых поездок

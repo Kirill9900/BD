@@ -1,6 +1,4 @@
 -- data_generation_fixed.sql
--- Исправленная версия генерации базовых данных (departments, vehicle_types, routes, vehicles, drivers, trips)
--- НЕ выполняет тяжелой генерации GPS (это делаем bash-скриптом отдельно)
 
 SET search_path TO transport;
 \timing on
@@ -22,11 +20,10 @@ RESTART IDENTITY CASCADE;
 -- 1) departments (50)
 INSERT INTO transport.departments (dept_name, contact_phone)
 SELECT 'Подразделение №' || i,
-       -- короткий формат телефона без дефисов, чтобы поместиться в VARCHAR(15): +7XXXXXXXXXX (12 символов)
        '+7' || LPAD((9000000000 + i)::text, 10, '0')
 FROM generate_series(1,50) i;
 
--- 2) vehicle_types (15) — явные значения
+-- 2) vehicle_types (15)
 INSERT INTO transport.vehicle_types (type_name, fuel_type, avg_consumption) VALUES
 ('Легковой малый', 'Бензин', 6.5),
 ('Легковой средний', 'Бензин', 8.5),
@@ -79,7 +76,7 @@ SELECT
          ELSE (15 + (i % 60))::DECIMAL(8,2) END
 FROM generate_series(1,200) i;
 
--- 4) vehicles (1500) — следим, чтобы license_plate был в пределах VARCHAR(10)
+-- 4) vehicles (1500) 
 INSERT INTO transport.vehicles (license_plate, model, year, type_id, dept_id)
 SELECT
     -- составной госномер, всего <=10 символов; шаблон: XNNNXNNN  (пример: А123БВ199) => 9 символов
@@ -114,7 +111,7 @@ SELECT
     ((i-1) % 50) + 1
 FROM generate_series(1,1500) i;
 
--- 5) drivers (800) — phone в формате +7XXXXXXXXXX (12 символов)
+-- 5) drivers (800) 
 INSERT INTO transport.drivers (first_name, last_name, license_number, phone, dept_id)
 SELECT
     (ARRAY['Александр','Дмитрий','Максим','Сергей','Андрей','Алексей','Артём','Илья','Кирилл','Михаил',
@@ -130,8 +127,7 @@ SELECT
     ((i-1) % 50) + 1
 FROM generate_series(1,800) i;
 
--- 6) trips (150000 поездок — можно изменить число)
--- ВНИМАНИЕ: выбери разумное значение; 150000 даёт хорошую базу для миллионов GPS
+-- 6) trips 150000 поездок 
 INSERT INTO transport.trips (vehicle_id, driver_id, route_id, start_time, end_time, trip_status)
 SELECT
     ( (i-1) % 1500 ) + 1,
