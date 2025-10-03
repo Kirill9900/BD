@@ -1,0 +1,269 @@
+2. Аггрегирующие запросы (3-5)
+
+Агрегирующие функции: COUNT, SUM, AVG, MAX, MIN.
+SET search_path TO transport;
+Примеры:
+
+Количество поездок для каждого автомобиля
+
+SELECT v.license_plate, COUNT(t.trip_id) AS trips_count
+FROM vehicles v
+LEFT JOIN trips t ON v.vehicle_id = t.vehicle_id
+GROUP BY v.license_plate;
+
+
+Средний расход топлива за месяц по каждому автомобилю
+
+SELECT vehicle_id, AVG(fuel_amount_liters) AS avg_fuel
+FROM fuel_consumption
+WHERE refuel_timestamp >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY vehicle_id;
+
+
+Общая стоимость ТО по подразделениям
+
+SELECT d.dept_name, SUM(m.cost_rub) AS total_maintenance
+FROM maintenance m
+JOIN vehicles v ON m.vehicle_id = v.vehicle_id
+JOIN departments d ON v.dept_id = d.dept_id
+GROUP BY d.dept_name;
+
+3. Оконные функции (3-5)
+
+Оконные функции позволяют вычислять значения по "окну" данных без группировки всей таблицы.
+
+Примеры:
+
+Рейтинг водителей по количеству поездок
+
+SELECT driver_id, COUNT(*) OVER(PARTITION BY driver_id) AS trips_count
+FROM trips;
+
+Рейтинг количества поездок авто
+
+SELECT DISTINCT
+    vehicle_id,
+    COUNT(*) OVER(PARTITION BY vehicle_id) AS vehicle_trips_count
+FROM transport.trips;
+
+
+Рейтинг автомобилей по среднему расходу топлива
+
+SELECT vehicle_id, fuel_amount_liters
+FROM transport.fuel_consumption;
+
+
+4. Запросы с объединениями (JOIN)
+
+2 таблицы:
+
+-- Список поездок с именами водителей
+SELECT t.trip_id, d.first_name, d.last_name
+FROM trips t
+JOIN drivers d ON t.driver_id = d.driver_id;
+
+-- Автомобили с типами
+SELECT v.license_plate, vt.type_name
+FROM vehicles v
+JOIN vehicle_types vt ON v.type_id = vt.type_id;
+
+
+3 таблицы:
+
+-- Поездки с водителем и маршрутом
+SELECT t.trip_id, d.first_name, r.route_name
+FROM trips t
+JOIN drivers d ON t.driver_id = d.driver_id
+JOIN routes r ON t.route_id = r.route_id;
+
+-- Автомобили с типом и подразделением
+SELECT v.license_plate, vt.type_name, d.dept_name
+FROM vehicles v
+JOIN vehicle_types vt ON v.type_id = vt.type_id
+JOIN departments d ON v.dept_id = d.dept_id;
+
+-- ТО с автомобилем и подразделением
+SELECT m.maintenance_id, v.license_plate, d.dept_name
+FROM maintenance m
+JOIN vehicles v ON m.vehicle_id = v.vehicle_id
+JOIN departments d ON v.dept_id = d.dept_id;
+
+-- Поездки с автомобилем, водителем и маршрутом
+SELECT t.trip_id, v.license_plate, d.first_name, r.route_name
+FROM trips t
+JOIN vehicles v ON t.vehicle_id = v.vehicle_id
+JOIN drivers d ON t.driver_id = d.driver_id
+JOIN routes r ON t.route_id = r.route_id;
+
+
+4 таблицы:
+
+-- Расход топлива с автомобилем, водителем и маршрутом
+SELECT f.fuel_id, v.license_plate, d.first_name, r.route_name, f.fuel_amount_liters
+FROM fuel_consumption f
+JOIN vehicles v ON f.vehicle_id = v.vehicle_id
+JOIN trips t ON f.trip_id = t.trip_id
+JOIN drivers d ON t.driver_id = d.driver_id
+JOIN routes r ON t.route_id = r.route_id;
+
+
+5 таблиц:
+
+-- Полный отчет по поездке: автомобиль, водитель, маршрут, топливо, ТО
+SELECT t.trip_id, v.license_plate, d.first_name, r.route_name, f.fuel_amount_liters, m.maintenance_type
+FROM trips t
+JOIN vehicles v ON t.vehicle_id = v.vehicle_id
+JOIN drivers d ON t.driver_id = d.driver_id
+JOIN routes r ON t.route_id = r.route_id
+LEFT JOIN fuel_consumption f ON f.trip_id = t.trip_id
+LEFT JOIN maintenance m ON m.vehicle_id = v.vehicle_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VEHICLE_TYPE
+sqlvehicle_type_id (PK, INT)
+type_name (VARCHAR(50))
+max_load_capacity (DECIMAL(8,2))
+fuel_type (VARCHAR(20))
+average_fuel_consumption (DECIMAL(5,2))
+
+DEPARTMENT
+sqldept_id (PK, INT)
+dept_name (VARCHAR(100))
+dept_head (VARCHAR(100))
+contact_phone (VARCHAR(15))
+
+VEHICLE
+sqlvehicle_id (PK, INT)
+license_plate (VARCHAR(10), UNIQUE)
+model (VARCHAR(50))
+year (INT)
+type_id (FK, INT)
+dept_id (FK, INT)
+vin_number (VARCHAR(17), UNIQUE)
+engine_number (VARCHAR(20))
+insurance_policy (VARCHAR(20))
+registration_date (DATE)
+
+DRIVER
+sqldriver_id (PK, INT)
+first_name (VARCHAR(50))
+last_name (VARCHAR(50))
+middle_name (VARCHAR(50))
+license_number (VARCHAR(20), UNIQUE)
+license_expiry_date (DATE)
+phone (VARCHAR(15))
+email (VARCHAR(100))
+hire_date (DATE)
+dept_id (FK, INT)
+
+ROUTE
+sqlroute_id (PK, INT)
+route_name (VARCHAR(100))
+start_point (VARCHAR(200))
+end_point (VARCHAR(200))
+distance_km (DECIMAL(8,2))
+estimated_time_minutes (INT)
+ROUTE_WAYPOINTS
+sqlwaypoint_id (PK, INT)
+route_id (FK, INT)
+sequence_number (INT)
+latitude (DECIMAL(10,8))
+longitude (DECIMAL(11,8))
+waypoint_name (VARCHAR(100))
+
+TRIP
+sqltrip_id (PK, INT)
+vehicle_id (FK, INT)
+driver_id (FK, INT)
+route_id (FK, INT)
+start_time (TIMESTAMP)
+end_time (TIMESTAMP)
+actual_distance_km (DECIMAL(8,2))
+fuel_consumed_liters (DECIMAL(6,2))
+trip_status (VARCHAR(20))
+
+GPS_TRACKING
+sqltracking_id (PK, INT)
+vehicle_id (FK, INT)
+trip_id (FK, INT)
+timestamp (TIMESTAMP)
+latitude (DECIMAL(10,8))
+longitude (DECIMAL(11,8))
+speed_kmh (DECIMAL(5,2))
+direction_degrees (DECIMAL(5,2))
+
+FUEL_CONSUMPTION
+sqlfuel_id (PK, INT)
+vehicle_id (FK, INT)
+trip_id (FK, INT)
+fuel_amount_liters (DECIMAL(6,2))
+fuel_cost_rub (DECIMAL(8,2))
+fuel_station (VARCHAR(100))
+refuel_timestamp (TIMESTAMP)
+odometer_reading (INT)
+
+MAINTENANCE
+sqlmaintenance_id (PK, INT)
+vehicle_id (FK, INT)
+maintenance_type (VARCHAR(50))
+maintenance_date (DATE)
+description (TEXT)
+cost_rub (DECIMAL(8,2))
+service_provider (VARCHAR(100))
+next_maintenance_date (DATE)
+odometer_reading (INT)
+
+SENSOR_DATA
+sqlsensor_id (PK, INT)
+vehicle_id (FK, INT)
+trip_id (FK, INT)
+timestamp (TIMESTAMP)
+engine_temperature (DECIMAL(5,2))
+oil_pressure (DECIMAL(5,2))
+tire_pressure_fl (DECIMAL(4,2))
+tire_pressure_fr (DECIMAL(4,2))
+tire_pressure_rl (DECIMAL(4,2))
+tire_pressure_rr (DECIMAL(4,2))
+battery_voltage (DECIMAL(4,2))
