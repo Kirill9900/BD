@@ -1,4 +1,4 @@
-2. Аггрегирующие запросы (3-5)
+2. Аггрегирующие запросы 
 
 Агрегирующие функции: COUNT, SUM, AVG, MAX, MIN.
 SET search_path TO transport;
@@ -28,7 +28,7 @@ JOIN vehicles v ON m.vehicle_id = v.vehicle_id
 JOIN departments d ON v.dept_id = d.dept_id
 GROUP BY d.dept_name;
 
-3. Оконные функции (3-5)
+3. Оконные функции 
 
 Оконные функции позволяют вычислять значения по "окну" данных без группировки всей таблицы.
 
