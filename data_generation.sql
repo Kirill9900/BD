@@ -1,9 +1,6 @@
--- data_generation_fixed.sql
-
 SET search_path TO transport;
 \timing on
 
--- Очистка (если надо) — аккуратно: удаляет все данные и сбрасывает sequences
 TRUNCATE TABLE
     transport.sensor_data,
     transport.gps_tracking,
@@ -79,7 +76,7 @@ FROM generate_series(1,200) i;
 -- 4) vehicles (1500) 
 INSERT INTO transport.vehicles (license_plate, model, year, type_id, dept_id)
 SELECT
-    -- составной госномер, всего <=10 символов; шаблон: XNNNXNNN  (пример: А123БВ199) => 9 символов
+    
     (ARRAY['А','В','Е','К','М','Н','О','Р','С','Т','У','Х'])[1 + ( (i-1) % 12 )]
     || LPAD((100 + ((i-1) % 900))::text,3,'0')
     || (ARRAY['А','В','Е','К','М','Н','О','Р','С','Т','У','Х'])[1 + (((i-1)/12)::int % 12)],
@@ -134,16 +131,13 @@ SELECT
     ( (i-1) % 800 ) + 1,
     ( (i-1) % 200 ) + 1,
     CURRENT_DATE - INTERVAL '90 days' + ( (i-1) % 90 ) * INTERVAL '1 day' + (6 + ((i-1) % 16)) * INTERVAL '1 hour' + ((i-1) % 60) * INTERVAL '1 minute',
-    -- end_time = start_time + (0.5 .. 8) hours
     (CURRENT_DATE - INTERVAL '90 days' + ( (i-1) % 90 ) * INTERVAL '1 day' + (6 + ((i-1) % 16)) * INTERVAL '1 hour' + ((i-1) % 60) * INTERVAL '1 minute')
       + ((0.5 + ((i-1) % 75) * 0.1) * INTERVAL '1 hour'),
     CASE WHEN (i % 100) < 95 THEN 'Завершена' ELSE 'В пути' END
 FROM generate_series(1,150000) i;
 
--- Обновляем статистику
 ANALYZE transport.trips;
 
--- Финальная нотификация
 DO $$
 BEGIN
   RAISE NOTICE 'БАЗОВЫЕ ДАННЫЕ СГЕНЕРИРОВАНЫ: Departments, vehicle_types, routes, vehicles, drivers, trips';

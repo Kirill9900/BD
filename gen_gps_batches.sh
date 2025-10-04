@@ -1,14 +1,11 @@
 #!/bin/bash
-# gen_gps_batches.sh
-# Batch GPS generation for transport.gps_tracking
-# Настройки:
+
 DB="transport_monitoring"
 PSQL="psql -d $DB -q -v ON_ERROR_STOP=1"
 BATCH_TRIPS=2000        
 POINTS_PER_HOUR=6       
 MAX_POINTS_PER_TRIP=1000
 
-# Определяем диапазон завершённых поездок
 MIN_TRIP=$($PSQL -t -c "SELECT COALESCE(MIN(trip_id),0) FROM transport.trips WHERE trip_status='Завершена';" | tr -d ' ')
 MAX_TRIP=$($PSQL -t -c "SELECT COALESCE(MAX(trip_id),0) FROM transport.trips WHERE trip_status='Завершена';" | tr -d ' ')
 
@@ -18,7 +15,6 @@ if [ "$MIN_TRIP" -eq 0 ] || [ "$MAX_TRIP" -eq 0 ]; then
   exit 1
 fi
 
-# Пробегаем батчами по trip_id
 for START in $(seq $MIN_TRIP $BATCH_TRIPS $MAX_TRIP); do
   END=$((START + BATCH_TRIPS - 1))
   if [ $END -gt $MAX_TRIP ]; then END=$MAX_TRIP; fi
@@ -49,7 +45,6 @@ CROSS JOIN generate_series(1, t.tot_pts) AS gs(n);
 COMMIT;
 SQL
 
-  # краткая пауза для разгрузки
   sleep 0.2
 done
 

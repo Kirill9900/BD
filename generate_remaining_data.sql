@@ -20,7 +20,6 @@ BEGIN
             gt.vehicle_id,
             gt.trip_id,
             gt.timestamp,
-            -- Приводим к numeric перед ROUND
             ROUND((70 + random()*50 + CASE WHEN gt.speed_kmh > 80 THEN 10 ELSE 0 END)::numeric, 2) AS engine_temperature,
             ROUND((2.5 + random()*2.5)::numeric, 2) AS oil_pressure,
             ROUND((12.0 + random()*2.8)::numeric, 2) AS battery_voltage
@@ -57,7 +56,6 @@ BEGIN
                 ELSE (40 + random()*40)
               END::numeric, 2
             )::numeric(6,2) AS fuel_amount_liters,
-            -- стоимость: приведение ко numeric и округление
             ROUND(((30 + random()*30) * (55 + random()*10))::numeric, 2)::numeric(8,2) AS fuel_cost_rub,
             (ARRAY['Лукойл','Роснефть','Газпром нефть','Татнефть','Shell','BP','Total'])[(floor(random()*7)+1)::int] || ' АЗС' AS fuel_station,
             t.start_time + (t.end_time - t.start_time) * random() AS refuel_timestamp
@@ -74,7 +72,7 @@ END
 $$;
 
 
--- 3) Техобслуживание — 1-2 записи на автомобиль (если таблица пуста)
+-- 3) Техобслуживание — 1-2 записи на автомобиль 
 DO $$
 DECLARE
     cnt BIGINT;
@@ -104,12 +102,10 @@ $$;
 
 COMMIT;
 
--- Обновляем статистику
 ANALYZE sensor_data;
 ANALYZE fuel_consumption;
 ANALYZE maintenance;
 
--- Итоговые размеры
 SELECT 'counts' AS what,
        (SELECT COUNT(*) FROM sensor_data) AS sensor_rows,
        (SELECT COUNT(*) FROM fuel_consumption) AS fuel_rows,
