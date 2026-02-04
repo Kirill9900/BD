@@ -1,0 +1,85 @@
+
+SELECT vehicle_id INTO TEMP TABLE example_vid
+FROM transport.gps_tracking
+LIMIT 1;
+
+Тесты запросов — по условию партицирования (timestamp)
+
+EXPLAIN (ANALYZE, BUFFERS) 
+SELECT count(*) FROM transport.gps_tracking
+WHERE timestamp >= date_trunc('month', current_date) - interval '1 month';
+
+EXPLAIN (ANALYZE, BUFFERS) 
+SELECT count(*) FROM transport.gps_tracking_copy
+WHERE timestamp >= date_trunc('month', current_date) - interval '1 month';
+
+
+Без 
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT *
+FROM transport.gps_tracking
+WHERE vehicle_id = (SELECT vehicle_id FROM example_vid)
+LIMIT 100;
+
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT *
+FROM transport.gps_tracking_copy
+WHERE vehicle_id = (SELECT vehicle_id FROM example_vid)
+LIMIT 100;
+
+
+Комбо
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT *
+FROM transport.gps_tracking
+WHERE timestamp >= date_trunc('month', current_date) - interval '1 month'
+  AND vehicle_id = (SELECT vehicle_id FROM example_vid)
+LIMIT 100;
+
+-- Копия (непартицированная)
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT *
+FROM transport.gps_tracking_copy
+WHERE timestamp >= date_trunc('month', current_date) - interval '1 month'
+  AND vehicle_id = (SELECT vehicle_id FROM example_vid)
+LIMIT 100;
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO logged_test (data) VALUES ('test data');
+
+INSERT INTO unlogged_test (data) VALUES ('test data');
+
+INSERT INTO logged_test (data)
+SELECT md5(random()::text)
+FROM generate_series(1, 1000);
+
+INSERT INTO unlogged_test (data)
+SELECT md5(random()::text)
+FROM generate_series(1, 1000);
+
+
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT COUNT(*) FROM logged_test;
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT COUNT(*) FROM unlogged_test;
+
+
+DELETE FROM logged_test;
+DELETE FROM unlogged_test;
+

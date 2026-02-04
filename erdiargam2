@@ -1,0 +1,116 @@
+
+erDiagram
+    %% Справочные таблицы
+    VEHICLE_TYPES {
+        int type_id PK
+        varchar type_name
+        varchar fuel_type
+        decimal avg_consumption
+    }
+    
+    DEPARTMENTS {
+        int dept_id PK
+        varchar dept_name
+        varchar contact_phone
+    }
+    
+    %% Основные сущности
+    VEHICLES {
+        int vehicle_id PK
+        varchar license_plate UK
+        varchar model
+        int year
+        int type_id FK
+        int dept_id FK
+    }
+    
+    DRIVERS {
+        int driver_id PK
+        varchar first_name
+        varchar last_name
+        varchar license_number UK
+        varchar phone
+        int dept_id FK
+    }
+    
+    ROUTES {
+        int route_id PK
+        varchar route_name
+        varchar start_point
+        varchar end_point
+        decimal distance_km
+    }
+    
+    %% Операционные таблицы
+    TRIPS {
+        int trip_id PK
+        int vehicle_id FK
+        int driver_id FK
+        int route_id FK
+        timestamp start_time
+        timestamp end_time
+        varchar trip_status
+    }
+    
+    GPS_TRACKING {
+        int tracking_id PK
+        int vehicle_id FK
+        int trip_id FK
+        timestamp timestamp
+        decimal latitude
+        decimal longitude
+        decimal speed_kmh
+    }
+    
+    FUEL_CONSUMPTION {
+        int fuel_id PK
+        int vehicle_id FK
+        int trip_id FK
+        decimal fuel_amount_liters
+        decimal fuel_cost_rub
+        varchar fuel_station
+        timestamp refuel_timestamp
+    }
+    
+    MAINTENANCE {
+        int maintenance_id PK
+        int vehicle_id FK
+        varchar maintenance_type
+        date maintenance_date
+        decimal cost_rub
+        varchar service_provider
+    }
+    
+    SENSOR_DATA {
+        int sensor_id PK
+        int vehicle_id FK
+        int trip_id FK
+        timestamp timestamp
+        decimal engine_temperature
+        decimal oil_pressure
+        decimal battery_voltage
+    }
+    
+    %% Связи между таблицами
+    
+    %% Справочники -> Основные сущности
+    VEHICLE_TYPES ||--o{ VEHICLES : "type_id"
+    DEPARTMENTS ||--o{ VEHICLES : "dept_id"
+    DEPARTMENTS ||--o{ DRIVERS : "dept_id"
+    
+    %% Поездки - центральная таблица
+    VEHICLES ||--o{ TRIPS : "vehicle_id"
+    DRIVERS ||--o{ TRIPS : "driver_id"
+    ROUTES ||--o{ TRIPS : "route_id"
+    
+    %% Операционные данные
+    VEHICLES ||--o{ GPS_TRACKING : "vehicle_id"
+    TRIPS ||--o{ GPS_TRACKING : "trip_id"
+    
+    VEHICLES ||--o{ FUEL_CONSUMPTION : "vehicle_id"
+    TRIPS ||--o{ FUEL_CONSUMPTION : "trip_id"
+    
+    VEHICLES ||--o{ MAINTENANCE : "vehicle_id"
+    
+    VEHICLES ||--o{ SENSOR_DATA : "vehicle_id"
+    TRIPS ||--o{ SENSOR_DATA : "trip_id"

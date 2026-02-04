@@ -1,0 +1,7 @@
+===== POSTGRES BACKUP START 20251007T143255Z =====
+User: kirill
+DB: transport_monitoring, SCHEMA: transport
+Outdir: /home/kirill/bazi dannix/backups/postgres_transport
+[1] Dump globals...
+pg_dumpall: error: missing "=" after "transport_monitoring" in connection info string
+pg_dumpall failed

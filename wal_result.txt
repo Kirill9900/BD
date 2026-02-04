@@ -1,0 +1,14 @@
+postgres     360  0.4  0.3 215808 29312 ?        Ss   16:07   1:20 /usr/lib/postgresql/14/bin/postgres -D /var/lib/postgresql/14/replica -c config_file=/etc/postgresql/14/replica/postgresql.conf
+postgres     563  0.0  1.2 215940 96868 ?        Ss   16:07   0:12 postgres: 14/replica: checkpointer 
+postgres     564  0.0  0.1 215808 11620 ?        Ss   16:07   0:04 postgres: 14/replica: background writer 
+postgres     566  0.0  0.1 215808 11492 ?        Ss   16:07   0:16 postgres: 14/replica: walwriter 
+postgres     567  0.0  0.1 216376  9956 ?        Ss   16:07   0:00 postgres: 14/replica: autovacuum launcher 
+postgres     569  0.0  0.0  70536  7140 ?        Ss   16:07   0:12 postgres: 14/replica: stats collector 
+postgres     570  0.0  0.1 216236  9444 ?        Ss   16:07   0:05 postgres: 14/replica: logical replication launcher 
+postgres  210992  0.0  0.1  17068  9600 ?        Ss   20:54   0:00 /lib/systemd/systemd --user
+postgres  210994  0.0  0.0 169180  5344 ?        S    20:54   0:00 (sd-pam)
+root      214791  0.0  0.0   9092  5888 pts/4    S+   20:59   0:00 sudo -iu postgres psql -p 5433
+root      214792  0.0  0.0   9092  2472 pts/7    Ss   20:59   0:00 sudo -iu postgres psql -p 5433
+postgres  214793  0.0  0.1  19568  8832 pts/7    S+   20:59   0:00 /usr/lib/postgresql/14/bin/psql -p 5433
+postgres  214858  0.0  0.3 218828 25476 ?        Ss   20:59   0:00 postgres: 14/replica: postgres transport_monitoring [local] idle
+kirill    215415  0.0  0.0   4028  2176 pts/5    S+   21:00   0:00 grep --color=auto postgres

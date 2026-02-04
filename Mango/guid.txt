@@ -1,0 +1,15 @@
+docker exec -it mongo-local mongosh -u root -p rootpass --authenticationDatabase admin - зайти
+
+show collections - посмотреть коллекции 
+
+db.vehicles.find().limit(1) - информация о коллекции 
+
+db.vehicles.find({ licensePlate: "Т999ТТ777" }) - найти элемент например по гос номеру 
+db.vehicles.find({ _id: ObjectId(в"69200cbd5a35ee4d24ce616d") }) - или найти по id 
+
+db.maintenance.find({ vehicleId: db.vehicles.findOne({licensePlate: "Т999ТТ777"})._id }).pretty() - найти то авто с таким то номером
+db.trips.findOne({ status: "Запланирована" }) - найти поездку с таким статусом или поездки
+
+db.driver_stats.find().limit(5) - витрина
+
+node server.js
