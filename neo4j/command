@@ -1,0 +1,23 @@
+1 //////
+
+// Проверка созданных узлов
+MATCH (n) RETURN labels(n) as Type, count(n) as Count;
+
+2 //////
+
+// Подсчет общего количества связей
+MATCH ()-[r]->() 
+RETURN count(r) as TotalRelationships;
+
+// Подсчет по типам связей
+MATCH ()-[r]->() 
+RETURN type(r) as RelationType, count(r) as Count 
+ORDER BY Count DESC;
+
+// Подсчет узлов
+MATCH (n) 
+RETURN labels(n)[0] as NodeType, count(n) as Count 
+ORDER BY Count DESC;
+
+3 //////
+

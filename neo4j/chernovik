@@ -1,0 +1,45 @@
+MATCH (d:Driver {licenseNumber:'16АА538858'}), (v:Vehicle {licensePlate:'Р205ХВ58'})
+MERGE (d)-[:DRIVES {since: date('2024-01-01'), primaryDriver: false}]->(v);
+
+MATCH (d:Driver {licenseNumber:'01АА111222'}), (v:Vehicle {licensePlate:'Р205ХВ58'})
+MERGE (d)-[:DRIVES {since: date('2024-02-01'), primaryDriver: false}]->(v);
+
+
+для 3 
+
+// Найдём конкретных водителей и транспорт, чтобы добавить связи
+MATCH (d1:Driver {licenseNumber:'16АА538858'}), 
+      (d2:Driver {licenseNumber:'01АА111222'}),
+      (v:Vehicle {licensePlate:'Р205ХВ58'})
+
+// Создадим две поездки, которые будут связывать этих водителей через один транспорт
+MERGE (tA:Trip {tripId:'TRIP_SPECIAL1'})
+  SET tA.status='Завершена', tA.startTime=datetime('2024-12-01T08:00:00Z')
+
+MERGE (tB:Trip {tripId:'TRIP_SPECIAL2'})
+  SET tB.status='В пути', tB.startTime=datetime('2024-12-02T08:00:00Z')
+
+// Связи: d1 -> tA, tA -> v
+MERGE (d1)-[:PERFORMED_BY]->(tA)
+MERGE (tA)-[:USES_VEHICLE]->(v)
+
+// Связи: d2 -> tB, tB -> v
+MERGE (d2)-[:PERFORMED_BY]->(tB)
+MERGE (tB)-[:USES_VEHICLE]->(v)
+
+для 7
+
+// Создаём транспорт
+MERGE (v:Vehicle {licensePlate:'TEST123'}) 
+SET v.model='TestModel'
+
+// Создаём двух водителей из одного отдела
+MERGE (d1:Driver {licenseNumber:'D001'})
+SET d1.firstName='Ivan', d1.lastName='Petrov', d1.departmentName='Logistics'
+MERGE (d2:Driver {licenseNumber:'D002'})
+SET d2.firstName='Petr', d2.lastName='Ivanov', d2.departmentName='Logistics'
+
+// Связываем их с одним транспортом
+MERGE (d1)-[:DRIVES {primaryDriver:true}]->(v)
+MERGE (d2)-[:DRIVES {primaryDriver:false}]->(v)
+
