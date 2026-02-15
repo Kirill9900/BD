@@ -1,0 +1,287 @@
+2026-02-13 04:54:45.003+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.056+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.062+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.104+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.134+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.174+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.203+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.243+0000 INFO  [neo4j]: logged in
+2026-02-13 04:54:47.298+0000 INFO  [neo4j]: logged in
+2026-02-13 04:56:22.219+0000 INFO  [neo4j]: DROP USER reader_user
+2026-02-13 04:59:10.400+0000 INFO  [neo4j]: CREATE USER reader SET PASSWORD '******' CHANGE NOT REQUIRED
+2026-02-13 04:59:11.052+0000 INFO  [neo4j]: GRANT ROLE reader TO reader
+2026-02-13 04:59:12.734+0000 INFO  [neo4j]: GRANT ACCESS ON DATABASE neo4j TO reader
+2026-02-13 04:59:14.801+0000 INFO  [neo4j]: GRANT MATCH {*} ON GRAPH neo4j ELEMENTS * TO reader
+2026-02-13 05:02:35.943+0000 INFO  [neo4j]: CREATE USER publisher SET PASSWORD '******' CHANGE NOT REQUIRED
+2026-02-13 05:02:36.123+0000 INFO  [neo4j]: GRANT ROLE publisher TO publisher
+2026-02-13 05:02:36.320+0000 INFO  [neo4j]: GRANT ACCESS ON DATABASE neo4j TO publisher
+2026-02-13 05:02:36.576+0000 INFO  [neo4j]: GRANT MATCH {*} ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 05:02:37.925+0000 INFO  [neo4j]: GRANT CREATE ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 05:02:38.090+0000 INFO  [neo4j]: GRANT DELETE ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 05:09:11.472+0000 INFO  [neo4j]: GRANT MATCH {*} ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 05:12:02.444+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.740+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.763+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.786+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.805+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.869+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.881+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.901+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:02.965+0000 INFO  [neo4j]: logged in
+2026-02-13 05:12:49.915+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.269+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.269+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.269+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.296+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.321+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.386+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.402+0000 INFO  [reader]: logged in
+2026-02-13 05:12:50.409+0000 INFO  [reader]: logged in
+2026-02-13 05:13:05.771+0000 ERROR [reader]: Exception thrown, 42NFF: Creating new node label on database 'neo4j' is not allowed for user 'reader' with roles [PUBLIC, reader]. See GRANT CREATE NEW NODE LABEL ON DATABASE `neo4j`...
+org.neo4j.graphdb.security.AuthorizationViolationException: Creating new node label on database 'neo4j' is not allowed for user 'reader' with roles [PUBLIC, reader]. See GRANT CREATE NEW NODE LABEL ON DATABASE `neo4j`...
+	at org.neo4j.graphdb.security.AuthorizationViolationException.authorizationViolation(AuthorizationViolationException.java:53)
+	at org.neo4j.internal.kernel.api.security.SecurityAuthorizationHandler.logAndGetAuthorizationException(SecurityAuthorizationHandler.java:253)
+	at org.neo4j.internal.kernel.api.security.SecurityAuthorizationHandler.assertAllowsTokenCreates(SecurityAuthorizationHandler.java:190)
+	at org.neo4j.kernel.impl.newapi.KernelToken.getOrCreateForName(KernelToken.java:207)
+	at org.neo4j.kernel.impl.newapi.KernelToken.labelGetOrCreateForName(KernelToken.java:68)
+	at org.neo4j.cypher.internal.runtime.compiled.expressions.CompiledTokenManager.nodeLabelGetOrCreate(CompiledTokenManager.java:55)
+	at org.neo4j.codegen.OperatorTaskPipeline0_395EF0E9_9.compiledOperate(Unknown Source)
+	at org.neo4j.cypher.internal.runtime.pipelined.operators.CompiledTask.operateWithProfile(OperatorCodeGenBaseTemplates.scala:723)
+	at org.neo4j.cypher.internal.runtime.pipelined.RegularPipelineTask.executeOperators(PipelineTask.scala:128)
+	at org.neo4j.cypher.internal.runtime.pipelined.RegularPipelineTask.executeWorkUnit(PipelineTask.scala:112)
+	at org.neo4j.cypher.internal.runtime.pipelined.RegularPipelineTask.executeWorkUnit(PipelineTask.scala:74)
+	at org.neo4j.cypher.internal.runtime.pipelined.WorkerRunner.executeTask(WorkerRunner.scala:665)
+	at org.neo4j.cypher.internal.runtime.pipelined.WorkerRunner.workOnQuery(WorkerRunner.scala:477)
+	at org.neo4j.cypher.internal.runtime.pipelined.WorkerRunner.workOnQuery(WorkerRunner.scala:344)
+	at org.neo4j.cypher.internal.runtime.pipelined.execution.CallingThreadExecutingQuery.request(CallingThreadExecutingQuery.scala:47)
+	at org.neo4j.cypher.internal.PipelinedRuntimeResult.request(PipelinedRuntimeResult.scala:96)
+	at org.neo4j.cypher.internal.result.StandardInternalExecutionResult.request(StandardInternalExecutionResult.scala:107)
+	at org.neo4j.cypher.internal.result.ClosingExecutionResult.request(ClosingExecutionResult.scala:157)
+	at org.neo4j.router.impl.subscriber.DelegatingQueryExecution.request(DelegatingQueryExecution.java:72)
+	at org.neo4j.bolt.tx.statement.StatementImpl.consume(StatementImpl.java:167)
+	at org.neo4j.bolt.protocol.common.fsm.transition.transaction.streaming.PullResultsStreamingStateTransition.process(PullResultsStreamingStateTransition.java:48)
+	at org.neo4j.bolt.protocol.common.fsm.transition.transaction.streaming.StreamingStateTransition.process(StreamingStateTransition.java:62)
+	at org.neo4j.bolt.protocol.common.fsm.transition.transaction.streaming.StreamingStateTransition.process(StreamingStateTransition.java:55)
+	at org.neo4j.bolt.protocol.common.fsm.transition.transaction.streaming.StreamingStateTransition.process(StreamingStateTransition.java:34)
+	at org.neo4j.bolt.protocol.common.fsm.transition.transaction.TransactionalStateTransition.process(TransactionalStateTransition.java:42)
+	at org.neo4j.bolt.fsm.state.MultiTransitionState.process(MultiTransitionState.java:53)
+	at org.neo4j.bolt.fsm.StateMachineImpl.process(StateMachineImpl.java:158)
+	at org.neo4j.bolt.protocol.common.connector.connection.AtomicSchedulingConnection$ProcessJob.perform(AtomicSchedulingConnection.java:637)
+	at org.neo4j.bolt.protocol.common.connector.connection.AtomicSchedulingConnection.executeJob(AtomicSchedulingConnection.java:334)
+	at org.neo4j.bolt.protocol.common.connector.connection.AtomicSchedulingConnection.doExecuteJobs(AtomicSchedulingConnection.java:267)
+	at org.neo4j.bolt.protocol.common.connector.connection.AtomicSchedulingConnection.executeJobs(AtomicSchedulingConnection.java:207)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-02-13 05:19:22.632+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:22.997+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.002+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.009+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.048+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.086+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.103+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.149+0000 INFO  [publisher]: logged in
+2026-02-13 05:19:23.157+0000 INFO  [publisher]: logged in
+2026-02-13 05:22:13.074+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.553+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.556+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.557+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.569+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.592+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.623+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.641+0000 INFO  [neo4j]: logged in
+2026-02-13 05:22:13.778+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:40.862+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.684+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.688+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.716+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.741+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.778+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.815+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.847+0000 INFO  [neo4j]: logged in
+2026-02-13 06:51:45.879+0000 INFO  [neo4j]: logged in
+2026-02-13 08:49:26.274+0000 INFO  CREATE USER neo4j PASSWORD ****** CHANGE NOT REQUIRED
+2026-02-13 08:49:26.754+0000 INFO  CREATE ROLE admin
+2026-02-13 08:49:26.755+0000 INFO  GRANT TRANSACTION MANAGEMENT ON DATABASE * TO admin
+2026-02-13 08:49:26.760+0000 INFO  GRANT START ON DATABASE * TO admin
+2026-02-13 08:49:26.761+0000 INFO  GRANT STOP ON DATABASE * TO admin
+2026-02-13 08:49:26.761+0000 INFO  GRANT ALL ON DBMS TO admin
+2026-02-13 08:49:26.761+0000 INFO  GRANT CONSTRAINT MANAGEMENT ON DATABASE * TO admin
+2026-02-13 08:49:26.761+0000 INFO  GRANT INDEX MANAGEMENT ON DATABASE * TO admin
+2026-02-13 08:49:26.762+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO admin
+2026-02-13 08:49:26.762+0000 INFO  GRANT WRITE ON GRAPH * TO admin
+2026-02-13 08:49:26.762+0000 INFO  GRANT MATCH {*} ON GRAPH * TO admin
+2026-02-13 08:49:26.762+0000 INFO  GRANT ACCESS ON DATABASE * TO admin
+2026-02-13 08:49:26.763+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO admin
+2026-02-13 08:49:26.763+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO admin
+2026-02-13 08:49:26.763+0000 INFO  GRANT LOAD ON ALL DATA TO admin
+2026-02-13 08:49:26.764+0000 INFO  CREATE ROLE architect
+2026-02-13 08:49:26.765+0000 INFO  GRANT CONSTRAINT MANAGEMENT ON DATABASE * TO architect
+2026-02-13 08:49:26.765+0000 INFO  GRANT INDEX MANAGEMENT ON DATABASE * TO architect
+2026-02-13 08:49:26.766+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO architect
+2026-02-13 08:49:26.766+0000 INFO  GRANT WRITE ON GRAPH * TO architect
+2026-02-13 08:49:26.766+0000 INFO  GRANT MATCH {*} ON GRAPH * TO architect
+2026-02-13 08:49:26.767+0000 INFO  GRANT ACCESS ON DATABASE * TO architect
+2026-02-13 08:49:26.767+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO architect
+2026-02-13 08:49:26.767+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO architect
+2026-02-13 08:49:26.767+0000 INFO  CREATE ROLE publisher
+2026-02-13 08:49:26.768+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO publisher
+2026-02-13 08:49:26.769+0000 INFO  GRANT WRITE ON GRAPH * TO publisher
+2026-02-13 08:49:26.769+0000 INFO  GRANT MATCH {*} ON GRAPH * TO publisher
+2026-02-13 08:49:26.770+0000 INFO  GRANT ACCESS ON DATABASE * TO publisher
+2026-02-13 08:49:26.770+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO publisher
+2026-02-13 08:49:26.770+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO publisher
+2026-02-13 08:49:26.770+0000 INFO  CREATE ROLE editor
+2026-02-13 08:49:26.771+0000 INFO  GRANT WRITE ON GRAPH * TO editor
+2026-02-13 08:49:26.772+0000 INFO  GRANT MATCH {*} ON GRAPH * TO editor
+2026-02-13 08:49:26.772+0000 INFO  GRANT ACCESS ON DATABASE * TO editor
+2026-02-13 08:49:26.772+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO editor
+2026-02-13 08:49:26.773+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO editor
+2026-02-13 08:49:26.773+0000 INFO  CREATE ROLE reader
+2026-02-13 08:49:26.774+0000 INFO  GRANT MATCH {*} ON GRAPH * TO reader
+2026-02-13 08:49:26.774+0000 INFO  GRANT ACCESS ON DATABASE * TO reader
+2026-02-13 08:49:26.775+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO reader
+2026-02-13 08:49:26.775+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO reader
+2026-02-13 08:49:26.775+0000 INFO  CREATE ROLE PUBLIC
+2026-02-13 08:49:26.776+0000 INFO  GRANT ACCESS ON HOME DATABASE TO PUBLIC
+2026-02-13 08:49:26.776+0000 INFO  GRANT EXECUTE PROCEDURE * ON DBMS TO PUBLIC
+2026-02-13 08:49:26.777+0000 INFO  GRANT EXECUTE FUNCTION * ON DBMS TO PUBLIC
+2026-02-13 08:49:26.777+0000 INFO  GRANT LOAD ON ALL DATA TO PUBLIC
+2026-02-13 08:49:26.778+0000 INFO  GRANT ROLE admin TO neo4j
+2026-02-13 08:50:01.895+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.013+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.015+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.047+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.096+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.174+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.213+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.248+0000 INFO  [neo4j]: logged in
+2026-02-13 08:50:06.305+0000 INFO  [neo4j]: logged in
+2026-02-13 09:09:30.718+0000 INFO  [neo4j]: logged in
+2026-02-13 09:10:35.446+0000 INFO  [neo4j]: logged in
+2026-02-13 09:10:35.449+0000 INFO  [neo4j]: logged in
+2026-02-13 09:10:35.449+0000 INFO  [neo4j]: logged in
+2026-02-13 09:10:35.461+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:16.468+0000 INFO  CREATE USER neo4j PASSWORD ****** CHANGE NOT REQUIRED
+2026-02-13 09:12:16.997+0000 INFO  CREATE ROLE admin
+2026-02-13 09:12:16.999+0000 INFO  GRANT TRANSACTION MANAGEMENT ON DATABASE * TO admin
+2026-02-13 09:12:17.010+0000 INFO  GRANT START ON DATABASE * TO admin
+2026-02-13 09:12:17.010+0000 INFO  GRANT STOP ON DATABASE * TO admin
+2026-02-13 09:12:17.011+0000 INFO  GRANT ALL ON DBMS TO admin
+2026-02-13 09:12:17.012+0000 INFO  GRANT CONSTRAINT MANAGEMENT ON DATABASE * TO admin
+2026-02-13 09:12:17.013+0000 INFO  GRANT INDEX MANAGEMENT ON DATABASE * TO admin
+2026-02-13 09:12:17.013+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO admin
+2026-02-13 09:12:17.014+0000 INFO  GRANT WRITE ON GRAPH * TO admin
+2026-02-13 09:12:17.014+0000 INFO  GRANT MATCH {*} ON GRAPH * TO admin
+2026-02-13 09:12:17.015+0000 INFO  GRANT ACCESS ON DATABASE * TO admin
+2026-02-13 09:12:17.015+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO admin
+2026-02-13 09:12:17.016+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO admin
+2026-02-13 09:12:17.016+0000 INFO  GRANT LOAD ON ALL DATA TO admin
+2026-02-13 09:12:17.017+0000 INFO  CREATE ROLE architect
+2026-02-13 09:12:17.018+0000 INFO  GRANT CONSTRAINT MANAGEMENT ON DATABASE * TO architect
+2026-02-13 09:12:17.019+0000 INFO  GRANT INDEX MANAGEMENT ON DATABASE * TO architect
+2026-02-13 09:12:17.019+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO architect
+2026-02-13 09:12:17.019+0000 INFO  GRANT WRITE ON GRAPH * TO architect
+2026-02-13 09:12:17.020+0000 INFO  GRANT MATCH {*} ON GRAPH * TO architect
+2026-02-13 09:12:17.020+0000 INFO  GRANT ACCESS ON DATABASE * TO architect
+2026-02-13 09:12:17.021+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO architect
+2026-02-13 09:12:17.021+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO architect
+2026-02-13 09:12:17.021+0000 INFO  CREATE ROLE publisher
+2026-02-13 09:12:17.023+0000 INFO  GRANT NAME MANAGEMENT ON DATABASE * TO publisher
+2026-02-13 09:12:17.023+0000 INFO  GRANT WRITE ON GRAPH * TO publisher
+2026-02-13 09:12:17.024+0000 INFO  GRANT MATCH {*} ON GRAPH * TO publisher
+2026-02-13 09:12:17.024+0000 INFO  GRANT ACCESS ON DATABASE * TO publisher
+2026-02-13 09:12:17.025+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO publisher
+2026-02-13 09:12:17.025+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO publisher
+2026-02-13 09:12:17.025+0000 INFO  CREATE ROLE editor
+2026-02-13 09:12:17.027+0000 INFO  GRANT WRITE ON GRAPH * TO editor
+2026-02-13 09:12:17.028+0000 INFO  GRANT MATCH {*} ON GRAPH * TO editor
+2026-02-13 09:12:17.028+0000 INFO  GRANT ACCESS ON DATABASE * TO editor
+2026-02-13 09:12:17.029+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO editor
+2026-02-13 09:12:17.029+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO editor
+2026-02-13 09:12:17.030+0000 INFO  CREATE ROLE reader
+2026-02-13 09:12:17.032+0000 INFO  GRANT MATCH {*} ON GRAPH * TO reader
+2026-02-13 09:12:17.032+0000 INFO  GRANT ACCESS ON DATABASE * TO reader
+2026-02-13 09:12:17.033+0000 INFO  GRANT SHOW INDEX ON DATABASE * TO reader
+2026-02-13 09:12:17.033+0000 INFO  GRANT SHOW CONSTRAINTS ON DATABASE * TO reader
+2026-02-13 09:12:17.034+0000 INFO  CREATE ROLE PUBLIC
+2026-02-13 09:12:17.035+0000 INFO  GRANT ACCESS ON HOME DATABASE TO PUBLIC
+2026-02-13 09:12:17.036+0000 INFO  GRANT EXECUTE PROCEDURE * ON DBMS TO PUBLIC
+2026-02-13 09:12:17.036+0000 INFO  GRANT EXECUTE FUNCTION * ON DBMS TO PUBLIC
+2026-02-13 09:12:17.037+0000 INFO  GRANT LOAD ON ALL DATA TO PUBLIC
+2026-02-13 09:12:17.038+0000 INFO  GRANT ROLE admin TO neo4j
+2026-02-13 09:12:40.768+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.813+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.823+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.864+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.905+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.945+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:44.991+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:45.060+0000 INFO  [neo4j]: logged in
+2026-02-13 09:12:45.082+0000 INFO  [neo4j]: logged in
+2026-02-13 09:20:01.655+0000 INFO  [neo4j]: CREATE USER reader SET PASSWORD '******' CHANGE NOT REQUIRED
+2026-02-13 09:20:02.074+0000 INFO  [neo4j]: GRANT ROLE reader TO reader
+2026-02-13 09:20:03.424+0000 INFO  [neo4j]: GRANT ACCESS ON DATABASE neo4j TO reader
+2026-02-13 09:20:04.995+0000 INFO  [neo4j]: GRANT MATCH {*} ON GRAPH neo4j ELEMENTS * TO reader
+2026-02-13 09:20:22.537+0000 INFO  [neo4j]: CREATE USER publisher SET PASSWORD '******' CHANGE NOT REQUIRED
+2026-02-13 09:20:22.775+0000 INFO  [neo4j]: GRANT ROLE publisher TO publisher
+2026-02-13 09:20:23.126+0000 INFO  [neo4j]: GRANT ACCESS ON DATABASE neo4j TO publisher
+2026-02-13 09:20:23.357+0000 INFO  [neo4j]: GRANT MATCH {*} ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 09:20:24.572+0000 INFO  [neo4j]: GRANT CREATE ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-13 09:20:24.789+0000 INFO  [neo4j]: GRANT DELETE ON GRAPH neo4j ELEMENTS * TO publisher
+2026-02-14 08:13:26.756+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.005+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.006+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.021+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.043+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.088+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.112+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.148+0000 INFO  [neo4j]: logged in
+2026-02-14 08:13:31.178+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.188+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.456+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.463+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.495+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.508+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.537+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.564+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.576+0000 INFO  [neo4j]: logged in
+2026-02-14 08:54:11.634+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:50.778+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.724+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.748+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.780+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.821+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.877+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.902+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.934+0000 INFO  [neo4j]: logged in
+2026-02-14 09:30:54.973+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:16.044+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.674+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.686+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.718+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.746+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.776+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.811+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.844+0000 INFO  [neo4j]: logged in
+2026-02-15 09:24:18.883+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:09.960+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.572+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.577+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.644+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.657+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.685+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.725+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.778+0000 INFO  [neo4j]: logged in
+2026-02-15 10:02:15.819+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:32.873+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.623+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.632+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.660+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.688+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.719+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.751+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.776+0000 INFO  [neo4j]: logged in
+2026-02-15 10:34:35.875+0000 INFO  [neo4j]: logged in

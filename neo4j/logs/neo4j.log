@@ -1,0 +1,291 @@
+2026-02-13 04:54:16.621+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 04:54:16.635+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 04:54:16.896+0000 INFO  Starting...
+2026-02-13 04:54:20.656+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 04:54:20.751+0000 INFO  This instance is ServerId{c26d0a2b} (c26d0a2b-76b8-4b37-a8e5-4fad180d2e76)
+2026-02-13 04:54:21.059+0000 INFO  Resolved endpoints with LIST{endpoints:'[b64d6a830a2a:6000]'} to '[b64d6a830a2a:6000]'
+2026-02-13 04:54:21.189+0000 INFO  Resolved endpoints with LIST{endpoints:'[b64d6a830a2a:6000]'} to '[b64d6a830a2a:6000]'
+2026-02-13 04:54:23.222+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 04:54:23.291+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 04:54:31.311+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 04:54:39.318+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 04:54:40.485+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 04:54:40.486+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 04:54:40.490+0000 INFO  id: 3E36141725F1628F43DCD9F2FF78655DD3C899005F9F962BC9B96B0B681B2045
+2026-02-13 04:54:40.491+0000 INFO  name: system
+2026-02-13 04:54:40.491+0000 INFO  creationDate: 2026-02-02T08:12:59.644Z
+2026-02-13 04:54:40.492+0000 INFO  Started.
+2026-02-13 05:38:09.440+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 05:38:09.443+0000 INFO  Stopping...
+2026-02-13 06:51:03.355+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 06:51:03.381+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 06:51:03.980+0000 INFO  Starting...
+2026-02-13 06:51:11.067+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 06:51:11.271+0000 INFO  This instance is ServerId{c26d0a2b} (c26d0a2b-76b8-4b37-a8e5-4fad180d2e76)
+2026-02-13 06:51:11.860+0000 INFO  Resolved endpoints with LIST{endpoints:'[a925323c6f66:6000]'} to '[a925323c6f66:6000]'
+2026-02-13 06:51:12.089+0000 INFO  Resolved endpoints with LIST{endpoints:'[a925323c6f66:6000]'} to '[a925323c6f66:6000]'
+2026-02-13 06:51:16.023+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 06:51:16.131+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 06:51:24.157+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 06:51:32.169+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 06:51:34.468+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 06:51:34.469+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 06:51:34.476+0000 INFO  id: 3E36141725F1628F43DCD9F2FF78655DD3C899005F9F962BC9B96B0B681B2045
+2026-02-13 06:51:34.477+0000 INFO  name: system
+2026-02-13 06:51:34.478+0000 INFO  creationDate: 2026-02-02T08:12:59.644Z
+2026-02-13 06:51:34.478+0000 INFO  Started.
+2026-02-13 07:02:50.064+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 07:02:50.066+0000 INFO  Stopping...
+2026-02-13 07:03:27.764+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 07:03:27.788+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 07:03:28.291+0000 INFO  Starting...
+2026-02-13 07:03:35.023+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 07:03:35.220+0000 INFO  This instance is ServerId{c26d0a2b} (c26d0a2b-76b8-4b37-a8e5-4fad180d2e76)
+2026-02-13 07:03:35.793+0000 INFO  Resolved endpoints with LIST{endpoints:'[14fb257a5e86:6000]'} to '[14fb257a5e86:6000]'
+2026-02-13 07:03:35.983+0000 INFO  Resolved endpoints with LIST{endpoints:'[14fb257a5e86:6000]'} to '[14fb257a5e86:6000]'
+2026-02-13 07:03:39.996+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 07:03:40.086+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 07:03:48.115+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 07:03:56.127+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 07:03:58.335+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 07:03:58.337+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 07:03:58.344+0000 INFO  id: 3E36141725F1628F43DCD9F2FF78655DD3C899005F9F962BC9B96B0B681B2045
+2026-02-13 07:03:58.345+0000 INFO  name: system
+2026-02-13 07:03:58.345+0000 INFO  creationDate: 2026-02-02T08:12:59.644Z
+2026-02-13 07:03:58.346+0000 INFO  Started.
+2026-02-13 07:05:01.788+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 07:05:01.793+0000 INFO  Stopping...
+2026-02-13 07:06:30.992+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 07:06:31.016+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 07:06:31.538+0000 INFO  Starting...
+2026-02-13 07:06:38.280+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 07:06:38.485+0000 INFO  This instance is ServerId{c26d0a2b} (c26d0a2b-76b8-4b37-a8e5-4fad180d2e76)
+2026-02-13 07:06:39.081+0000 INFO  Resolved endpoints with LIST{endpoints:'[5594402b2676:6000]'} to '[5594402b2676:6000]'
+2026-02-13 07:06:39.272+0000 INFO  Resolved endpoints with LIST{endpoints:'[5594402b2676:6000]'} to '[5594402b2676:6000]'
+2026-02-13 07:06:43.215+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 07:06:43.339+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 07:06:51.366+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 07:06:59.379+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 07:07:01.989+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 07:07:01.994+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 07:07:02.001+0000 INFO  id: 3E36141725F1628F43DCD9F2FF78655DD3C899005F9F962BC9B96B0B681B2045
+2026-02-13 07:07:02.002+0000 INFO  name: system
+2026-02-13 07:07:02.003+0000 INFO  creationDate: 2026-02-02T08:12:59.644Z
+2026-02-13 07:07:02.003+0000 INFO  Started.
+2026-02-13 07:14:59.445+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 07:14:59.449+0000 INFO  Stopping...
+2026-02-13 08:49:11.663+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 08:49:11.686+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 08:49:12.252+0000 INFO  Starting...
+2026-02-13 08:49:19.314+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 08:49:19.604+0000 INFO  This instance is ServerId{71d903a1} (71d903a1-8819-487d-8f90-ed9e7fb2c079)
+2026-02-13 08:49:20.368+0000 INFO  Resolved endpoints with LIST{endpoints:'[d7cff6e81e53:6000]'} to '[d7cff6e81e53:6000]'
+2026-02-13 08:49:20.574+0000 INFO  Resolved endpoints with LIST{endpoints:'[d7cff6e81e53:6000]'} to '[d7cff6e81e53:6000]'
+2026-02-13 08:49:25.946+0000 INFO  Default database 'neo4j' is created
+2026-02-13 08:49:26.995+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 08:49:27.092+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 08:49:35.112+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 08:49:43.122+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 08:49:45.594+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 08:49:45.596+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 08:49:45.602+0000 INFO  id: 8389DAD786B9BD71F4B073139D99FB78969075A951F3EE8AC46DE3CBE527E2CD
+2026-02-13 08:49:45.603+0000 INFO  name: system
+2026-02-13 08:49:45.604+0000 INFO  creationDate: 2026-02-13T08:49:22.602Z
+2026-02-13 08:49:45.604+0000 INFO  Started.
+2026-02-13 09:11:23.601+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 09:11:23.603+0000 INFO  Stopping...
+2026-02-13 09:12:02.267+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-13 09:12:02.288+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-13 09:12:02.874+0000 INFO  Starting...
+2026-02-13 09:12:09.703+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-13 09:12:09.907+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-13 09:12:10.527+0000 INFO  Resolved endpoints with LIST{endpoints:'[aafaf87e86f1:6000]'} to '[aafaf87e86f1:6000]'
+2026-02-13 09:12:10.706+0000 INFO  Resolved endpoints with LIST{endpoints:'[aafaf87e86f1:6000]'} to '[aafaf87e86f1:6000]'
+2026-02-13 09:12:16.130+0000 INFO  Default database 'neo4j' is created
+2026-02-13 09:12:17.288+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-13 09:12:17.376+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-13 09:12:25.393+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-13 09:12:33.404+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-13 09:12:35.757+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-13 09:12:35.759+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-13 09:12:35.766+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-13 09:12:35.767+0000 INFO  name: system
+2026-02-13 09:12:35.768+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-13 09:12:35.768+0000 INFO  Started.
+2026-02-13 09:25:22.756+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-13 09:25:22.760+0000 INFO  Stopping...
+2026-02-14 08:08:38.962+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-14 08:08:38.988+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-14 08:08:39.541+0000 INFO  Starting...
+2026-02-14 08:08:46.386+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-14 08:08:46.606+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-14 08:08:47.213+0000 INFO  Resolved endpoints with LIST{endpoints:'[92c159d62c33:6000]'} to '[92c159d62c33:6000]'
+2026-02-14 08:08:47.405+0000 INFO  Resolved endpoints with LIST{endpoints:'[92c159d62c33:6000]'} to '[92c159d62c33:6000]'
+2026-02-14 08:08:51.355+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-14 08:08:51.450+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-14 08:08:59.495+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-14 08:09:07.507+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-14 08:09:10.266+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-14 08:09:10.268+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-14 08:09:10.273+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-14 08:09:10.275+0000 INFO  name: system
+2026-02-14 08:09:10.276+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-14 08:09:10.276+0000 INFO  Started.
+2026-02-14 09:15:06.907+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-14 09:15:06.909+0000 INFO  Stopping...
+2026-02-14 09:30:11.314+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-14 09:30:11.348+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-14 09:30:11.971+0000 INFO  Starting...
+2026-02-14 09:30:19.881+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-14 09:30:20.072+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-14 09:30:20.587+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-14 09:30:20.756+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-14 09:30:24.609+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-14 09:30:24.763+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-14 09:30:32.796+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-14 09:30:40.808+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-14 09:30:43.315+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-14 09:30:43.317+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-14 09:30:43.323+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-14 09:30:43.325+0000 INFO  name: system
+2026-02-14 09:30:43.326+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-14 09:30:43.327+0000 INFO  Started.
+2026-02-14 09:36:19.525+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-14 09:36:19.527+0000 INFO  Stopping...
+2026-02-15 09:23:54.798+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 09:23:54.830+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 09:23:55.090+0000 INFO  Starting...
+2026-02-15 09:23:59.689+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 09:23:59.819+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 09:24:00.211+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-15 09:24:00.325+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-15 09:24:02.519+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 09:24:02.569+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 09:24:02.589+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 09:24:02.595+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-15 09:24:04.001+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-15 09:24:04.002+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-15 09:24:04.005+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-15 09:24:04.006+0000 INFO  name: system
+2026-02-15 09:24:04.006+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-15 09:24:04.006+0000 INFO  Started.
+2026-02-15 10:00:49.143+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 10:00:49.217+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 10:00:49.901+0000 INFO  Starting...
+2026-02-15 10:01:00.940+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 10:01:01.386+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 10:01:02.194+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-15 10:01:02.411+0000 INFO  Resolved endpoints with LIST{endpoints:'[bc6be33ddbde:6000]'} to '[bc6be33ddbde:6000]'
+2026-02-15 10:01:08.046+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 10:01:08.148+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 10:01:16.203+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 10:01:24.212+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-15 10:01:27.309+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-15 10:01:27.310+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-15 10:01:27.317+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-15 10:01:27.318+0000 INFO  name: system
+2026-02-15 10:01:27.320+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-15 10:01:27.320+0000 INFO  Started.
+2026-02-15 10:13:44.797+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-15 10:13:44.799+0000 INFO  Stopping...
+2026-02-15 10:17:56.068+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 10:17:56.115+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 10:17:56.918+0000 INFO  Starting...
+2026-02-15 10:18:14.623+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 10:18:14.952+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 10:18:16.460+0000 INFO  Resolved endpoints with LIST{endpoints:'[480a7b6e25e6:6000]'} to '[480a7b6e25e6:6000]'
+2026-02-15 10:18:16.719+0000 INFO  Resolved endpoints with LIST{endpoints:'[480a7b6e25e6:6000]'} to '[480a7b6e25e6:6000]'
+2026-02-15 10:18:22.934+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 10:18:23.034+0000 INFO  Started publishing Prometheus metrics at http://0.0.0.0:2004/metrics
+2026-02-15 10:18:23.234+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 10:18:31.292+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 10:18:38.311+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-15 10:18:38.313+0000 INFO  Stopped.
+2026-02-15 10:19:27.471+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 10:19:27.528+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 10:19:28.283+0000 INFO  Starting...
+2026-02-15 10:19:38.619+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 10:19:38.929+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 10:19:39.941+0000 INFO  Resolved endpoints with LIST{endpoints:'[fd11dbf290c6:6000]'} to '[fd11dbf290c6:6000]'
+2026-02-15 10:19:40.152+0000 INFO  Resolved endpoints with LIST{endpoints:'[fd11dbf290c6:6000]'} to '[fd11dbf290c6:6000]'
+2026-02-15 10:19:46.073+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 10:19:46.127+0000 INFO  Started publishing Prometheus metrics at http://0.0.0.0:2004/metrics
+2026-02-15 10:19:46.241+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 10:19:54.267+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 10:20:02.279+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-15 10:20:06.476+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-15 10:20:06.477+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-15 10:20:06.484+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-15 10:20:06.484+0000 INFO  name: system
+2026-02-15 10:20:06.485+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-15 10:20:06.487+0000 INFO  Started.
+2026-02-15 10:24:03.138+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-15 10:24:03.140+0000 INFO  Stopping...
+2026-02-15 10:24:34.639+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 10:24:34.651+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 10:24:34.887+0000 INFO  Starting...
+2026-02-15 10:24:38.931+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 10:24:39.025+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 10:24:39.367+0000 INFO  Resolved endpoints with LIST{endpoints:'[248d0d2b4508:6000]'} to '[248d0d2b4508:6000]'
+2026-02-15 10:24:39.477+0000 INFO  Resolved endpoints with LIST{endpoints:'[248d0d2b4508:6000]'} to '[248d0d2b4508:6000]'
+2026-02-15 10:24:41.706+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 10:24:41.737+0000 INFO  Started publishing Prometheus metrics at http://0.0.0.0:2004/metrics
+2026-02-15 10:24:41.800+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 10:24:49.816+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 10:24:57.823+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-15 10:24:59.231+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-15 10:24:59.233+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-15 10:24:59.236+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-15 10:24:59.237+0000 INFO  name: system
+2026-02-15 10:24:59.237+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-15 10:24:59.237+0000 INFO  Started.
+2026-02-15 10:36:51.534+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-15 10:36:51.535+0000 INFO  Stopping...
+2026-02-15 10:37:21.248+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2026-02-15 10:37:21.272+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2026-02-15 10:37:21.669+0000 INFO  Starting...
+2026-02-15 10:37:27.085+0000 INFO  ======== Neo4j 2026.01.4 ========
+2026-02-15 10:37:27.217+0000 INFO  This instance is ServerId{1cec1a0a} (1cec1a0a-1eb7-44e3-ba08-c47a33649c07)
+2026-02-15 10:37:27.704+0000 INFO  Resolved endpoints with LIST{endpoints:'[9ff3a2b4a208:6000]'} to '[9ff3a2b4a208:6000]'
+2026-02-15 10:37:27.841+0000 INFO  Resolved endpoints with LIST{endpoints:'[9ff3a2b4a208:6000]'} to '[9ff3a2b4a208:6000]'
+2026-02-15 10:37:30.539+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2026-02-15 10:37:30.608+0000 INFO  Started publishing Prometheus metrics at http://0.0.0.0:2004/metrics
+2026-02-15 10:37:30.720+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-02-15 10:37:38.744+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2026-02-15 10:37:46.750+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2026-02-15 10:37:49.020+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2026-02-15 10:37:49.022+0000 INFO  Remote interface available at http://localhost:7474/
+2026-02-15 10:37:49.028+0000 INFO  id: A84F3A3A9C4057F7047E267F1BF88707C14DE6EC6753CBA3B5D68087329C03EA
+2026-02-15 10:37:49.029+0000 INFO  name: system
+2026-02-15 10:37:49.029+0000 INFO  creationDate: 2026-02-13T09:12:12.719Z
+2026-02-15 10:37:49.030+0000 INFO  Started.
+2026-02-15 10:57:14.930+0000 INFO  Neo4j Server shutdown initiated by request
+2026-02-15 10:57:14.932+0000 INFO  Stopping...

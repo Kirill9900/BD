@@ -4,9 +4,6 @@ MERGE (d)-[:DRIVES {since: date('2024-01-01'), primaryDriver: false}]->(v);
 MATCH (d:Driver {licenseNumber:'01АА111222'}), (v:Vehicle {licensePlate:'Р205ХВ58'})
 MERGE (d)-[:DRIVES {since: date('2024-02-01'), primaryDriver: false}]->(v);
 
-
-для 3 
-
 // Найдём конкретных водителей и транспорт, чтобы добавить связи
 MATCH (d1:Driver {licenseNumber:'16АА538858'}), 
       (d2:Driver {licenseNumber:'01АА111222'}),
@@ -27,8 +24,6 @@ MERGE (tA)-[:USES_VEHICLE]->(v)
 MERGE (d2)-[:PERFORMED_BY]->(tB)
 MERGE (tB)-[:USES_VEHICLE]->(v)
 
-для 7
-
 // Создаём транспорт
 MERGE (v:Vehicle {licensePlate:'TEST123'}) 
 SET v.model='TestModel'
@@ -43,3 +38,9 @@ SET d2.firstName='Petr', d2.lastName='Ivanov', d2.departmentName='Logistics'
 MERGE (d1)-[:DRIVES {primaryDriver:true}]->(v)
 MERGE (d2)-[:DRIVES {primaryDriver:false}]->(v)
 
+
+
+
+
+MATCH (d:Driver)-[:DRIVES]->(v:Vehicle)
+RETURN d, v  // ← возвращаем УЗЛЫ
