@@ -36,3 +36,21 @@ DROP INDEX vehicle_year_index IF EXISTS;
 SHOW INDEXES;
 
 
+
+
+Проверка: 
+
+CREATE (d:Driver {
+  licenseNumber: '16АА538858',  
+  firstName: 'Тест'
+});
+
+CREATE (d:Driver {
+  licenseNumber: 'NEW123',
+  lastName: 'Тест'
+});
+
+CREATE (v:Vehicle {
+  licensePlate: 'Р205ХВ58',  // уже существует
+  model: 'Тестовая машина'
+});

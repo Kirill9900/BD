@@ -32,3 +32,40 @@ CALL dbms.components() YIELD name, versions, edition
 WHERE name = 'Neo4j Kernel'
 RETURN versions[0] AS version, edition;
 
+
+
+
+
+
+
+
+
+
+
+
+UNWIND range(1, 10) AS i
+CREATE (:TestNode {id: i, name: 'Test ' + i, createdAt: datetime()});
+
+
+MATCH (n:TestNode)
+DETACH DELETE n;
+
+
+
+// Создаём 10 тестовых водителей
+UNWIND range(1, 10) AS i
+CREATE (:TestDriver {id: i, name: 'Водитель ' + i});
+
+// Создаём 3 тестовых автомобиля
+UNWIND ['Авто-1', 'Авто-2', 'Авто-3'] AS name
+CREATE (:TestVehicle {name: name});
+
+//все водители управляют одним авто:
+MATCH (d:TestDriver), (v:TestVehicle {name: 'Авто-1'})
+MERGE (d)-[:DRIVES {since: date('2024-01-01')}]->(v);
+
+//удалить
+MATCH (n:TestDriver) DETACH DELETE n;
+MATCH (v:TestVehicle) DETACH DELETE v;
+
+MATCH (n) RETURN count(n)
